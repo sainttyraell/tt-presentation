@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-sm">
+    <h1>Login</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <form (submit)="login()">
+      <div class="form-group">
+        <label for="field_login">Login</label>
+        <input name="field_login" type="text" class="form-control" id="field_login" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="model.username">
+      </div>
+      <div class="form-group">
+        <label for="field_password">Password</label>
+        <input name="field_password" type="password" class="form-control" id="field_password" placeholder="Password" [(ngModel)]="model.password">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>

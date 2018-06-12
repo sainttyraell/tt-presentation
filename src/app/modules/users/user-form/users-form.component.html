@@ -1,0 +1,34 @@
+<form [formGroup]="userForm" novalidate (submit)="submit()">
+  <div class="form-group">
+    <label class="center-block">Login:
+      <input class="form-control" formControlName="login">
+    </label>
+    <div class="text-danger" *ngIf="userForm.controls['login'].invalid && userForm.controls['login'].touched">
+      Login is required.
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="center-block">Name:
+      <input class="form-control" formControlName="name">
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="center-block">Surname:
+      <input class="form-control" formControlName="surname">
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="center-block">Password:
+      <input type="password" class="form-control" formControlName="password">
+    </label>
+    <div class="text-danger" *ngIf="userForm.controls['password'].invalid && userForm.controls['password'].touched">
+      Password is required.
+    </div>
+  </div>
+  <a routerLink="/users" class="btn btn-secondary">
+    Back
+  </a>
+  <button type="submit" [disabled]="userForm.invalid" class="btn btn-primary ml-2">
+    Submit
+  </button>
+</form>
